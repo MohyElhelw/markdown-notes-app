@@ -11,3 +11,7 @@ export const createFolder = createServerFn({ method: 'POST' })
 
         return result;
     })
+    export const getFolders = createServerFn({ method: 'GET' }).handler(async () => {
+        const result = await db.select().from(folders);
+        return result;
+    });
